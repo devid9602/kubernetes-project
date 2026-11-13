@@ -19,7 +19,8 @@ A collection of Kubernetes notes and manifests for practicing core workload reso
 Read the matching notes and inspect the YAML first. Adapt namespaces, image names, NFS server/export paths, and storage sizes to your cluster. Apply related resources in dependency order—for example, a StorageClass or PersistentVolume before its claim and workload—and verify the result with:
 
 ```sh
-kubectl get pods,deployments,services,pv,pvc,storageclass --all-namespaces
+kubectl get pods,deployments,services,pvc --all-namespaces
+kubectl get pv,storageclass
 ```
 
 The static-storage reference uses `hostPath`, which is suitable only for single-node testing and is not shared or durable storage for a multi-node production cluster. NFS manifests also need a real, reachable export configured for your environment.
