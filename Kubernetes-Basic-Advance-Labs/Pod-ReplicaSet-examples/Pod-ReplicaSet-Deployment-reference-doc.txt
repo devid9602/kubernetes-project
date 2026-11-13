@@ -124,6 +124,7 @@ Example with Labels and Selector: Labels-and-Selector-example-01.yaml
 In this example, the ReplicaSet is configured to manage Pods with the label app: myapp. The matchLabels selector in the ReplicaSet specification ensures that only Pods with the app: myapp label are managed by this ReplicaSet.
 
 #######--------------------
+# Provide these variables from a local secret manager or environment; do not commit their values.
   podman run --name mysql-basic  -e MYSQL_USER=user1 -e MYSQL_PASSWORD="${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in your environment}"  -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in your environment}"  -d quay.io/cprakash2118/rhel8-mysql-80
  
 
